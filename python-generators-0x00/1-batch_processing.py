@@ -15,11 +15,12 @@ def stream_users_in_batches(batch_size):
         rows = cursor.fetchall()
         if not rows:
             break
-        return rows
+        yield rows
         offset += batch_size
 
     cursor.close()
     connection.close()
+    return
 
 
 def batch_processing(batch_size):

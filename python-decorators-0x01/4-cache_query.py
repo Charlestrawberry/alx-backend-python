@@ -1,6 +1,7 @@
 import sqlite3
 import functools
 
+
 query_cache = {}
 
 def with_db_connection(func):
